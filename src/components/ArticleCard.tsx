@@ -30,7 +30,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
           (e.target as HTMLImageElement).src =
             "https://media.istockphoto.com/id/1128826884/vector/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-moment.jpg?s=612x612&w=0&k=20&c=390e76zN_TJ7HZHJpnI7jNl7UBpO3UP7hpR2meE1Qd4=";
         }}
-        style={{ aspectRatio: "16/9", objectFit: "cover" }} // Ensures the image maintains a 16:9 aspect ratio
+        style={{
+          aspectRatio: "16/9",
+          objectFit: "cover",
+          height: "fit-content",
+        }} // Ensures the image maintains a 16:9 aspect ratio
       />
       <div className="ml-4 w-2/3">
         <h2 className="text-xl font-semibold">{article.title}</h2>

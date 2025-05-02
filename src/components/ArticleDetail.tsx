@@ -71,7 +71,11 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
         src={article.hero}
         alt={article.title}
         className="my-4 aspect-[16/9] w-full object-cover"
-        style={{ aspectRatio: "16/9", objectFit: "cover" }}
+        style={{
+          aspectRatio: "16/9",
+          objectFit: "cover",
+          height: "fit-content",
+        }}
         onError={(e) => {
           (e.target as HTMLImageElement).src =
             "https://media.istockphoto.com/id/1128826884/vector/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-moment.jpg?s=612x612&w=0&k=20&c=390e76zN_TJ7HZHJpnI7jNl7UBpO3UP7hpR2meE1Qd4=";
