@@ -1,30 +1,26 @@
 [
-  {
-    "tagId": "tag1",
-    "name": "Technology"
-  },
-  {
-    "tagId": "tag2",
-    "name": "Health"
-  },
-  {
-    "tagId": "tag3",
-    "name": "Education"
-  },
-  {
-    "tagId": "tag4",
-    "name": "Business"
-  },
-  {
-    "tagId": "tag5",
-    "name": "Entertainment"
-  },
-  {
-    "tagId": "tag5",
-    "name": "Copilot"
-  },
-  {
-    "tagId": "tag5",
-    "name": "AI"
-  }
+  { "tagId": "tag1", "name": "Technology" },
+  { "tagId": "tag2", "name": "Health" },
+  { "tagId": "tag3", "name": "Education" },
+  { "tagId": "tag4", "name": "Business" },
+  { "tagId": "tag5", "name": "Entertainment" },
+  { "tagId": "tag6", "name": "AI" },
+  { "tagId": "tag7", "name": "Online Learning" },
+  { "tagId": "tag8", "name": "Pop Culture" },
+  { "tagId": "tag9", "name": "Media" },
+  { "tagId": "tag10", "name": "Startups" },
+  { "tagId": "tag11", "name": "Investing" },
+  { "tagId": "tag12", "name": "Productivity" },
+  { "tagId": "tag13", "name": "Tools" },
+  { "tagId": "tag14", "name": "Wellness" },
+  { "tagId": "tag15", "name": "Fitness" },
+  { "tagId": "tag16", "name": "Mental Health" },
+  { "tagId": "tag17", "name": "Parenting" },
+  { "tagId": "tag18", "name": "Lifestyle" },
+  { "tagId": "tag19", "name": "Streaming" },
+  { "tagId": "tag20", "name": "Habits" },
+  { "tagId": "tag21", "name": "Coding" },
+  { "tagId": "tag22", "name": "Tech Trends" },
+  { "tagId": "tag23", "name": "Finance" },
+  { "tagId": "tag24", "name": "Strategy" }
 ]
