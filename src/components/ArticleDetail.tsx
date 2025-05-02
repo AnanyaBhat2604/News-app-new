@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Article, Author } from "../types";
 import AuthorHoverView from "./AuthorHoverView";
-import { getAuthorById } from "./../services/getAuthor";
+import { getAuthorById } from "../services/api";
 import { useNavigate } from "react-router-dom";
 
 interface ArticleDetailProps {
@@ -14,7 +14,11 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
   const navigate = useNavigate();
 
   const navigateBack = () => {
-    navigate("/");
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
   };
   const renderDescription = () => {
     if (article.articleType === "TEXT" && article?.description) {
@@ -58,7 +62,9 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ article }) => {
         onClick={navigateBack}
         className="mt-3 mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
       >
-        Back to All Articles
+        {window.history.state && window.history.state.idx > 0
+          ? "Back"
+          : "Back to All Articles"}
       </button>
       <h1 className="text-2xl font-bold">{article.title}</h1>
       <img

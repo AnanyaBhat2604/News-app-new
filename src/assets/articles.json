@@ -32,7 +32,7 @@
     "title": "The Evolution of Music Streaming",
     "subtitle": "A video breakdown of how platforms like Spotify changed the industry",
     "hero": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f",
-    "mediaUrl": "https://cdn.example.com/videos/music-streaming-evolution.mp4",
+    "mediaUrl": "https://videos.pexels.com/video-files/852360/852360-hd_1280_720_30fps.mp4",
     "articleType": "VIDEO"
   },
   {
@@ -44,7 +44,7 @@
     "title": "How Startups Secure Venture Capital",
     "subtitle": "An audio deep dive into the VC ecosystem",
     "hero": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
-    "mediaUrl": "https://cdn.example.com/audio/startup-vc-guide.mp3",
+    "mediaUrl": "https://actions.google.com/sounds/v1/weather/rain_on_roof.ogg",
     "articleType": "AUDIO"
   },
   {
@@ -68,7 +68,7 @@
     "title": "10-Minute Morning Meditation Routine",
     "subtitle": "Boost your day with mindfulness",
     "hero": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b",
-    "mediaUrl": "https://cdn.example.com/videos/morning-meditation.mp4",
+    "mediaUrl": "https://videos.pexels.com/video-files/4057408/4057408-uhd_2732_1440_25fps.mp4",
     "articleType": "VIDEO"
   },
   {
@@ -80,7 +80,7 @@
     "title": "Nutrition Tips for Busy Parents",
     "subtitle": "Quick ideas for keeping your family healthy",
     "hero": "https://images.unsplash.com/photo-1556228453-efd4b9c71b48",
-    "mediaUrl": "https://cdn.example.com/audio/nutrition-parents.mp3",
+    "mediaUrl": "https://actions.google.com/sounds/v1/office/desk_organization.ogg",
     "articleType": "AUDIO"
   },
   {
@@ -116,7 +116,7 @@
     "title": "AI Code Assistants Compared",
     "subtitle": "Which one fits your workflow: Copilot, Tabnine, or CodeWhisperer?",
     "hero": "https://images.unsplash.com/photo-1633356122681-b70e3f0a0f9f",
-    "mediaUrl": "https://cdn.example.com/videos/ai-code-comparison.mp4",
+    "mediaUrl": "https://videos.pexels.com/video-files/5854603/5854603-uhd_2732_1440_24fps.mp4",
     "articleType": "VIDEO"
   },
   {
@@ -128,7 +128,7 @@
     "title": "The Rise of Fintech in 2025",
     "subtitle": "How digital wallets and neobanks are disrupting finance",
     "hero": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
-    "mediaUrl": "https://cdn.example.com/audio/fintech-2025.mp3",
+    "mediaUrl": "https://actions.google.com/sounds/v1/office/keyboard_typing_fast_close.ogg",
     "articleType": "AUDIO"
   }
 ]

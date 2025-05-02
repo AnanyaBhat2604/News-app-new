@@ -1,12 +1,14 @@
-{
-  "status": 1,
-  "message": "success",
-  "data": {
-    "categories": [
-      {
-        "categoryId": "a9d7hds2",
-        "categoryName": "Technology"
-      }
-    ]
+[
+  {
+    "categoryId": "a9d7hds2",
+    "categoryName": "Technology"
+  },
+  {
+    "categoryId": "c3f5kpl7",
+    "categoryName": "Health & Education"
+  },
+  {
+    "categoryId": "e7n3mpq9",
+    "categoryName": "Business & Entertainment"
   }
-}
+]

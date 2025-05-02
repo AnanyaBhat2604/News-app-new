@@ -1,4 +1,7 @@
-import articlesData from "../assets/articles.json"; // Import the JSON file
+import articlesData from "../assets/articles.json";
+import categoriesData from "../assets/categories.json"; // Import the JSON file
+import authors from "../assets/authors.json";
+import tags from "../assets/tags.json"; // Import the JSON file
 import { ArticleHomePage, FetchAllArticlesResponse } from "../types";
 
 export const fetchArticleById = (articleId: string) => {
@@ -65,6 +68,80 @@ export const fetchAllArticles = (
         authorName: authorName || "Anonymous",
         articles: [],
       },
+    };
+  }
+};
+
+export const fetchAllCategories = () => {
+  try {
+    if (!categoriesData || categoriesData.length === 0) {
+      throw new Error("No categories found in the JSON file.");
+    }
+
+    return {
+      status: 1,
+      message: "success",
+      data: categoriesData,
+    };
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    return {
+      status: 0,
+      message: "Failed to fetch categories",
+      data: [],
+    };
+  }
+};
+
+type Author = {
+  authorId: string;
+  name: string;
+  description: string;
+  authorImage: string;
+};
+
+export const getAuthorById = (id: string): Author | undefined => {
+  return authors.find((author) => author.authorId === id);
+};
+
+export const fetchAllAuthors = () => {
+  try {
+    if (!authors || authors.length === 0) {
+      throw new Error("No authors found in the JSON file.");
+    }
+
+    return {
+      status: 1,
+      message: "success",
+      data: authors,
+    };
+  } catch (error) {
+    console.error("Error fetching authors:", error);
+    return {
+      status: 0,
+      message: "Failed to fetch authors",
+      data: [],
+    };
+  }
+};
+
+export const fetchAllTags = () => {
+  try {
+    if (!tags || tags.length === 0) {
+      throw new Error("No tags found in the JSON file.");
+    }
+
+    return {
+      status: 1,
+      message: "success",
+      data: tags,
+    };
+  } catch (error) {
+    console.error("Error fetching tags:", error);
+    return {
+      status: 0,
+      message: "Failed to fetch tags",
+      data: [],
     };
   }
 };

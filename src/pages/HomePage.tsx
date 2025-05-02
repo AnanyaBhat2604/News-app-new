@@ -2,18 +2,24 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard";
 import Filters from "../components/Filters";
-import tagsData from "../assets/tags.json";
-import categoriesData from "../assets/categories.json";
-import authorsData from "../assets/authors.json";
-import homePageData from "../assets/homePage.json";
-import { fetchAllArticles } from "../services/api";
+import {
+  fetchAllArticles,
+  fetchAllAuthors,
+  fetchAllCategories,
+  fetchAllTags,
+} from "../services/api";
 import Pagination from "../components/Pagination";
+import FullscreenLoader from "../components/FullscreenLoader";
 
 const HomePage: React.FC = () => {
   const [articles, setArticles] = useState<any[]>([]);
-  const [filteredArticles, setFilteredArticles] = useState<any[]>(
-    homePageData?.data?.articles
-  );
+  const [categoriesData, setCategoriesData] = useState<any[]>([]);
+  const [authorsData, setAuthorsData] = useState<any[]>([]);
+  const [tagsData, setTagsData] = useState<any[]>([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const [filteredArticles, setFilteredArticles] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage] = useState(5);
 
@@ -47,8 +53,32 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     try {
+      setLoading(true);
       const articlesData = fetchAllArticles(1, null, null, null);
       setArticles(articlesData?.data?.articles);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    } finally {
+      setLoading(false);
+    }
+
+    try {
+      const categories = fetchAllCategories();
+      setCategoriesData(categories?.data);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+
+    try {
+      const authors = fetchAllAuthors();
+      setAuthorsData(authors?.data);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+
+    try {
+      const tags = fetchAllTags();
+      setTagsData(tags?.data || []);
     } catch (error) {
       console.error("Error fetching articles:", error);
     }
@@ -82,7 +112,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="container mx-auto p-4">
       <Filters
-        categories={categoriesData.data.categories}
+        categories={categoriesData}
         authors={authorsData}
         articleTypes={articleTypes || []}
         tags={tagsData || []}
@@ -115,41 +145,44 @@ const HomePage: React.FC = () => {
           ))}
         </div>
       ) : (
-        <div className="text-center text-gray-500">
-          <p>No articles found matching the current filters.</p>
-          <button
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-            onClick={() => {
-              const resetFilters: {
-                author: string;
-                category: string;
-                articleType: string;
-                tag: string;
-              } = {
-                author: "",
-                category: "",
-                articleType: "",
-                tag: "",
-              };
+        !loading && (
+          <div className="text-center text-gray-500">
+            <p>No articles found matching the current filters.</p>
+            <button
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+              onClick={() => {
+                const resetFilters: {
+                  author: string;
+                  category: string;
+                  articleType: string;
+                  tag: string;
+                } = {
+                  author: "",
+                  category: "",
+                  articleType: "",
+                  tag: "",
+                };
 
-              applyFilters(resetFilters);
+                applyFilters(resetFilters);
 
-              window.history.replaceState(
-                null,
-                "",
-                `${window.location.pathname}`
-              );
-            }}
-          >
-            Reset Filters
-          </button>
-        </div>
+                window.history.replaceState(
+                  null,
+                  "",
+                  `${window.location.pathname}`
+                );
+              }}
+            >
+              Reset Filters
+            </button>
+          </div>
+        )
       )}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />
+      {loading && <FullscreenLoader />}
     </div>
   );
 };
