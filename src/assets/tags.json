@@ -1,0 +1,30 @@
+[
+  {
+    "tagId": "tag1",
+    "name": "Technology"
+  },
+  {
+    "tagId": "tag2",
+    "name": "Health"
+  },
+  {
+    "tagId": "tag3",
+    "name": "Education"
+  },
+  {
+    "tagId": "tag4",
+    "name": "Business"
+  },
+  {
+    "tagId": "tag5",
+    "name": "Entertainment"
+  },
+  {
+    "tagId": "tag5",
+    "name": "Copilot"
+  },
+  {
+    "tagId": "tag5",
+    "name": "AI"
+  }
+]
